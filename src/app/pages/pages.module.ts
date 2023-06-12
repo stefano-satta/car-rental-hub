@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SharedModule } from '../shared/shared.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 

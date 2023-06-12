@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeroHomepageComponent } from './components/featured/hero-homepage/hero-homepage.component';
 
 
 const COMPONENTS = [
-  NavbarComponent
+  NavbarComponent,
+  HeroHomepageComponent
 ]
 
 @NgModule({
   declarations: [
-    COMPONENTS
+    COMPONENTS,
   ],
   imports: [
     CommonModule,
