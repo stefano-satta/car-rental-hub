@@ -1,10 +1,28 @@
+body {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
 #hero-homepage {
     height: calc(100vh - 84px);
-    
-    div:first-child {
-        flex: 1 1 0%;
+    overflow-x: hidden;
+
+    .hero__background-overlay {
+        background-image: url('./../assets/images/hero-background.png');
+        position: absolute;
+        top: -8%;
+        right: -55%;
+        z-index: -10;
+        height: 605px;
+        width: 100%;
+        background-repeat: round;
+        height: 100vh;
+        overflow-x: hidden;
     }
 
+    .row:first-child {
+        height: calc(100vh - 84px);
+    }
     .hero__title {
         font-size: 64px;
         font-weight: 800;
@@ -15,25 +33,12 @@
         font-weight: 300;
     }
     .hero__background {
-
         .hero__car-img {
             height: 450px;
             width: 100%;
             position: relative;
             z-index: 0;
             filter: drop-shadow(34px 27px 65px $color-black)
-        }
-
-        .hero__background-overlay {
-            background-image: url('./../assets/images/hero-background.png');
-            position: absolute;
-            top: -74%;
-            right: -46%;
-            z-index: -10;
-            height: 605px;
-            width: 100%;
-            background-repeat: round;
-            height: 100vh;
         }
     }
     
