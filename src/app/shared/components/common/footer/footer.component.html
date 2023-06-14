@@ -1,0 +1,31 @@
+<footer class="border-top py-5">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>&copy; {{currentYear}} RentalCarHub. All Rights Reserved</div>
+        <div>
+            For more info contact the
+            <a 
+                href="javascript:void(0)"
+                class="link-dark link-underline-opacity-25 link-underline-opacity-100-hover"
+                [ngbPopover]="infoCustomTemplate"
+                [autoClose]="true"
+                triggers="manual"
+                #popover="ngbPopover"
+                (click)="popover.open()"
+                placement="top"
+                popoverTitle="Hey! 👋🏻">
+                author
+            </a>
+        </div>
+    </div>
+</footer>
+
+<ng-template #infoCustomTemplate>
+    You can contact me by 
+    <a href="mailto:{{mail}}" class="link-dark link-underline-opacity-25 link-underline-opacity-100-hover">
+        mail
+    </a>
+    or 
+    <a [href]="siteUrl" target="_blank" class="link-dark link-underline-opacity-25 link-underline-opacity-100-hover">
+        visit my site!
+    </a>
+</ng-template>

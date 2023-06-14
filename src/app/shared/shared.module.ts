@@ -4,16 +4,18 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroHomepageComponent } from './components/featured/hero-homepage/hero-homepage.component';
+import { FooterComponent } from './components/common/footer/footer.component';
 
 
 const COMPONENTS = [
   NavbarComponent,
-  HeroHomepageComponent
+  HeroHomepageComponent,
+  FooterComponent,
 ]
 
 @NgModule({
   declarations: [
-    COMPONENTS,
+    COMPONENTS
   ],
   imports: [
     CommonModule,

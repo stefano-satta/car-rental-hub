@@ -1,10 +1,11 @@
 body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     box-sizing: border-box;
 }
 
 #hero-homepage {
-    height: calc(100vh - 84px);
+    height: calc(100vh - 64px);
     overflow-x: hidden;
 
     .hero__background-overlay {
@@ -41,5 +42,4 @@ body {
             filter: drop-shadow(34px 27px 65px $color-black)
         }
     }
-    
 }
