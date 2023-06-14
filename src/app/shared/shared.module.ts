@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroHomepageComponent } from './components/featured/hero-homepage/hero-homepage.component';
 import { FooterComponent } from './components/common/footer/footer.component';
+import { CarCardComponent } from './components/common/car-card/car-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const COMPONENTS = [
@@ -15,18 +17,21 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [
-    COMPONENTS
+    COMPONENTS,
+    CarCardComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
     RouterModule,
     COMPONENTS,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {

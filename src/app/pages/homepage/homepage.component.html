@@ -1,1 +1,37 @@
 <app-hero-homepage/>
+<div class="container py-5">
+    <h2>Car Catalogue</h2>
+    <div class="w-100">
+        <form class="row" [formGroup]="searchForm" (ngSubmit)="getAllCars()">
+            <div class="col-8 form-inline">
+                <input 
+                    type="text" 
+                    class="form-control-lg" 
+                    placeholder="Insert brand"
+                    formControlName="make">
+                <input 
+                    type="text" 
+                    class="form-control-lg" 
+                    placeholder="Insert model"
+                    formControlName="model">
+                <button type="submit" class="btn btn-primary rounded-pill btn-lg">Search</button>
+            </div>
+            <div class="col-4 row justify-content-end">
+                <div class="col">
+                    <select class="form-control form-control-lg" formControlName="year">
+                        <option [value]="year.value" *ngFor="let year of yearsProdCars">
+                            {{ year.label }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control form-control-lg" formControlName="fuel_type">
+                        <option [value]="fuel.value" *ngFor="let fuel of fuelType">
+                            {{ fuel.label }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
