@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AbstractHttpService } from './abstract-http.service';
 import { baseEnvironment } from 'src/environments/base-environment';
-import { CarPropsResponse, ICarGetParams } from '../models/car';
+import { CarProps, ICarGetParams } from '../models/car';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,11 @@ export class CarService extends AbstractHttpService {
     super(http);
   }
 
-  getAllCars(data: ICarGetParams): Observable<CarPropsResponse[]> {
+  getAllCars(data: ICarGetParams): Observable<CarProps[]> {
     const url = this.buildApiUrl(baseEnvironment.api.GET_ALL_CARS);
     console.log(url);
     
-    return this.http.get<CarPropsResponse[]>(url, {
+    return this.http.get<CarProps[]>(url, {
       params: data,
       headers: {
         'X-RapidAPI-Key': baseEnvironment.api.headers.rapidApiKey,

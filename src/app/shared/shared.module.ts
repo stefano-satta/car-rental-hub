@@ -7,18 +7,22 @@ import { HeroHomepageComponent } from './components/featured/hero-homepage/hero-
 import { FooterComponent } from './components/common/footer/footer.component';
 import { CarCardComponent } from './components/common/car-card/car-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IconComponent } from './components/common/icon/icon.component';
+import { CarDetailsModalComponent } from './components/common/modals/car-details-modal/car-details-modal.component';
 
 
 const COMPONENTS = [
   NavbarComponent,
   HeroHomepageComponent,
   FooterComponent,
+  CarCardComponent,
+  IconComponent,
 ]
 
 @NgModule({
   declarations: [
     COMPONENTS,
-    CarCardComponent,
+    CarDetailsModalComponent,
   ],
   imports: [
     CommonModule,

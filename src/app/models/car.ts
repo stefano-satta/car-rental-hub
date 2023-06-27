@@ -13,10 +13,10 @@ export type ICarGetParams = {
     fuel_type?: string;
 }
 
-export interface CarPropsResponse {
+export interface CarProps {
     city_mpg: number;
     class: string;
-    combination_mp: number;
+    combination_mpg: number;
     cylinders: number;
     displacement: number;
     drive: string;

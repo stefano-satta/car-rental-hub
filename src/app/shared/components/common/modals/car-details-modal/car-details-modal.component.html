@@ -1,0 +1,18 @@
+<div class="modal-header border-0">
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body pt-0">
+    <div class="d-flex justify-content-center mb-5 bg-light py-3 rounded">
+        <img src="../../../../../assets/images/car-samples/car-card-img.png" 
+            class="w-50" 
+            alt="car-img">
+    </div>
+    <h2 class="text-capitalize mb-3 fw-semibold">{{ getCarName() }}</h2>
+    <p *ngFor="let detail of car | keyvalue" class="d-flex justify-content-between">
+        <span class="text-capitalize">{{detail.key.split('_').join(" ")}}</span>
+        <span>{{detail.value}}</span>
+    </p>
+</div>
+<div class="modal-footer border-0 d-flex justify-content-center">
+    <button type="button" class="btn btn-primary rounded-pill btn-lg" (click)="activeModal.close('Close click')">Add to cart</button>
+</div>

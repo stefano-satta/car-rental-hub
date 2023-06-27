@@ -4,6 +4,8 @@ body {
     box-sizing: border-box;
 }
 
+.cursor-pointer { cursor: pointer !important; }
+
 #hero-homepage {
     height: calc(100vh - 64px);
     overflow-x: hidden;
@@ -40,6 +42,37 @@ body {
             position: relative;
             z-index: 0;
             filter: drop-shadow(34px 27px 65px $color-black)
+        }
+    }
+}
+
+.car__card {
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    }
+
+    .car__card__header {
+        border-radius: 1rem 1rem 0 0;
+        height: 11rem;
+
+        & img {
+            width: 70%;
+            top: 12%;
+            left: 14%;
+        }
+
+        .card__header-make {
+            top: 9%;
+            left: 4%;
+        }
+
+        .card-title {
+            top: 20%;
+            left: 4%;
         }
     }
 }

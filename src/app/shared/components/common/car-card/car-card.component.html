@@ -1,1 +1,29 @@
-<p>car-card works!</p>
+<div class="card border-0 car__card cursor-pointer" (click)="openModalDetails()">
+  <div class="position-relative p-2 bg-dark car__card__header">
+    <p class="text-white fs-6 position-absolute card__header-make text-uppercase fw-lighter">{{ car?.make }}</p>
+    <h5 class="card-title position-absolute fs-3 text-white">{{ car?.model | uppercase }}</h5>
+    <img src="../../../../../assets/images/car-samples/car-card-img.png" 
+      class="card-img-top mt-4 position-absolute" 
+      alt="car-img">
+  </div>
+  <div class="card-body mt-5">
+    <div class="d-flex justify-content-between">
+      <span class="text-uppercase my-auto">Starting at</span>
+      <span class="fs-3 fw-bold">$49,99/day</span>
+    </div>
+    <div class="d-flex justify-content-between w-75 mx-auto mt-5">
+      <div class="d-flex flex-column align-items-center">
+        <app-icon [typeIcon]="'fa-solid fa-car-battery fa-lg'"></app-icon>
+        <span class="mt-1">{{car?.displacement | number: '1.1-1'}}cc</span>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <app-icon [typeIcon]="'fa-sharp fa-solid fa-gear fa-lg'"></app-icon>
+        <span class="mt-1">{{car?.drive | uppercase}}</span>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <app-icon [typeIcon]="'fa-solid fa-gas-pump fa-lg'"></app-icon>
+        <span class="mt-1">{{car?.city_mpg}}MPG</span>
+      </div>
+    </div>
+  </div>
+</div>
