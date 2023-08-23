@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AbstractHttpService } from './abstract-http.service';
 import { baseEnvironment } from 'src/environments/base-environment';
-import { CarProps, ICarGetParams } from '../models/car';
+import { CarProps, CarGetParams } from '../models/car';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class CarService extends AbstractHttpService {
     super(http);
   }
 
-  getAllCars(data: ICarGetParams): Observable<CarProps[]> {
+  getAllCars(data: CarGetParams): Observable<CarProps[]> {
     const url = this.buildApiUrl(baseEnvironment.api.GET_ALL_CARS);
     console.log(url);
     
@@ -27,7 +27,7 @@ export class CarService extends AbstractHttpService {
     });
   }
 
-  generateCarImageUrl(car: ICarGetParams, angle?: string): string {
+  generateCarImageUrl(car: CarGetParams, angle?: string): string {
     const url = new URL("https://cdn.imagin.studio/getimage");
     const { make, model, year } = car;
   

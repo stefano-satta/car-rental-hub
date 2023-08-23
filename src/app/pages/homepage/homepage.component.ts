@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CarProps, IFuels, IYearProduction } from 'src/app/models/car';
+import { CarGetParams, CarProps, IFuels, ISearchCarFormModel, IYearProduction } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 import { fuels, yearsProduction } from 'src/app/shared/constants/cars';
 
@@ -294,26 +294,34 @@ export class HomepageComponent implements OnInit {
         "year": 2023
     }
 ];
-  searchForm: FormGroup = new FormGroup({});
+  searchForm: FormGroup<ISearchCarFormModel> = this.fb.group({
+    limit: this.fb.control<string>('20'),
+    make: this.fb.control<string>(''),
+    model: this.fb.control<string>(''),
+    year: this.fb.control<string>(new Date().getFullYear().toString()),
+    fuel_type: this.fb.control<string>('')
+  });;
 
   constructor(private carService: CarService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.initForm();
+    //this.initForm();
+    //this.getAllCars();
+    
   }
 
-  initForm() {
-    this.searchForm = this.fb.group({
-      limit: 20,
-      make: this.fb.control(''),
-      model: this.fb.control(''),
-      year: this.fb.control(new Date().getFullYear()),
-      fuel_type: this.fb.control('')
-    });
-  }
+//   initForm() {
+//     this.searchForm = this.fb.group({
+//       limit: this.fb.control<string>('20'),
+//       make: this.fb.control<string>(''),
+//       model: this.fb.control<string>(''),
+//       year: this.fb.control<string>(new Date().getFullYear().toString()),
+//       fuel_type: this.fb.control<string>('')
+//     });
+//   }
 
   getAllCars() {
-    let params = {};
+    let params: CarGetParams = {};
     for (const [key, value] of Object.entries(this.searchForm.value)) {
       if (value) {
         params = {...params, ...{[key]: value}}
@@ -321,13 +329,10 @@ export class HomepageComponent implements OnInit {
     }
     console.log(params);
     
-
-
-    // this.carService.getAllCars(params)
-    //   .subscribe( res => {
-    //     console.log(res);
-    //     this.cars = res;
-    //   })
+    this.carService.getAllCars(params)
+      .subscribe( res => {
+        console.log(res);
+        this.cars = res;
+      })
   }
-  
 }

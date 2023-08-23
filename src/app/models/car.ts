@@ -1,3 +1,5 @@
+import { FormControl } from "@angular/forms";
+
 export interface IYearProduction {
     label: string;
     value: string;
@@ -5,7 +7,7 @@ export interface IYearProduction {
 
 export interface IFuels extends IYearProduction {}
 
-export type ICarGetParams = {
+export type CarGetParams = {
     year?: string;
     make?: string;
     model?: string;
@@ -26,4 +28,12 @@ export interface CarProps {
     model: string;
     transmission: string;
     year: number;
+}
+
+export interface ISearchCarFormModel {
+    year: FormControl<string | null>,
+    make: FormControl<string | null>,
+    model: FormControl<string | null>,
+    limit: FormControl<string | null>,
+    fuel_type: FormControl<string | null>
 }
