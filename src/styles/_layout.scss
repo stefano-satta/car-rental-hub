@@ -8,7 +8,7 @@ body {
 
 #hero-homepage {
     height: calc(100vh - 64px);
-    overflow-x: hidden;
+    overflow: hidden;
 
     .hero__background-overlay {
         background-image: url('./../assets/images/hero-background.png');
